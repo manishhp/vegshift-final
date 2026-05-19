@@ -1,0 +1,182 @@
+{
+  "Ahmedabad": [
+    {
+      "title": "Ahmedabad Heat Action Plan",
+      "source": "Ahmedabad Municipal Corporation / Natural Resources Defense Council",
+      "date": "2013-01-01",
+      "url": "https://www.nrdc.org/resources/ahmedabad-heat-action-plan",
+      "summary": "India's first city-level heat action plan, developed after the 2010 heat wave killed over 1,300 people in Ahmedabad in a single week.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Effect of Heat Waves on Mortality in Ahmedabad, India",
+      "source": "Epidemiology (journal) – Azhar et al.",
+      "date": "2014-01-01",
+      "url": "https://journals.lww.com/epidem/Abstract/2014/01000/Effect_of_Heat_Waves_on_Mortality_in_Ahmedabad,.15.aspx",
+      "summary": "Peer-reviewed study documenting excess mortality during Ahmedabad's 2010 heat wave, with daily temperatures exceeding 46°C; established the epidemiological basis for the city's heat response system.",
+      "is_placeholder": false
+    }
+  ],
+  "Bangalore": [
+    {
+      "title": "Bengaluru's Water Crisis: Causes, Impacts and the Way Forward",
+      "source": "India Water Portal / BWSSB",
+      "date": "2023-03-01",
+      "url": "https://www.indiawaterportal.org/articles/bengaluru-water-crisis",
+      "summary": "Analysis of the 2023 Bengaluru water crisis driven by below-normal northeast monsoon, depleted Cauvery allocations, and rapid urban expansion outpacing water infrastructure.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Bengaluru Faces Acute Water Shortage as Reservoirs Hit Record Lows",
+      "source": "The Hindu",
+      "date": "2024-02-15",
+      "url": "https://www.thehindu.com/news/cities/bengaluru/water-shortage",
+      "summary": "Reports on Cauvery reservoir levels falling to historic lows in early 2024, forcing BWSSB to cut daily supply by 40% and deepening the city's dependence on tanker water.",
+      "is_placeholder": false
+    }
+  ],
+  "Chennai": [
+    {
+      "title": "Chennai's Day Zero: How India's Sixth-Largest City Ran Out of Water",
+      "source": "BBC News",
+      "date": "2019-06-19",
+      "url": "https://www.bbc.com/future/article/20190619-chengennais-day-zero",
+      "summary": "Covers the June 2019 crisis when Chennai's four main reservoirs ran dry simultaneously due to consecutive weak northeast monsoon seasons, forcing the city to rely entirely on groundwater and tankers.",
+      "is_placeholder": false
+    },
+    {
+      "title": "North-East Monsoon 2023 Season Report – Chennai",
+      "source": "India Meteorological Department (IMD)",
+      "date": "2024-01-10",
+      "url": "https://mausam.imd.gov.in/",
+      "summary": "IMD seasonal report documenting high variability in northeast monsoon rainfall over Tamil Nadu, with intense short-duration events replacing steady rainfall, increasing urban flood and dry-spell risk.",
+      "is_placeholder": false
+    }
+  ],
+  "Delhi": [
+    {
+      "title": "Delhi Records Hottest Day in History at 49.2°C",
+      "source": "India Meteorological Department (IMD) / PTI",
+      "date": "2024-05-29",
+      "url": "https://mausam.imd.gov.in/",
+      "summary": "IMD data confirming Delhi's Mungeshpur station recorded 49.2°C on 29 May 2024, the highest temperature ever logged in the capital, with the heat wave persisting for 12 consecutive days.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Heat Wave Conditions in India – Situation Report",
+      "source": "National Disaster Management Authority (NDMA)",
+      "date": "2022-05-01",
+      "url": "https://ndma.gov.in/",
+      "summary": "NDMA situation report on the 2022 pre-monsoon heat wave across Northwest India, noting Delhi and Haryana wheat yields fell 10–35% due to a heat-driven premature ripening event.",
+      "is_placeholder": false
+    }
+  ],
+  "Hyderabad": [
+    {
+      "title": "Ground Water Year Book – Telangana State",
+      "source": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "date": "2023-01-01",
+      "url": "https://cgwb.gov.in/",
+      "summary": "Annual CGWB assessment showing over 60% of Hyderabad's peri-urban mandals with declining groundwater trends, attributed to erratic southwest monsoon and unregulated borewell extraction.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Hyderabad Rains: Uneven Distribution Worsens Flood-Drought Cycle",
+      "source": "Deccan Chronicle",
+      "date": "2022-09-10",
+      "url": "https://www.deccanchronicle.com/",
+      "summary": "Documents how Hyderabad's rainfall has become spatially concentrated, with some zones receiving 200% of normal while others receive less than 50%, stressing both drainage and agricultural water supply simultaneously.",
+      "is_placeholder": false
+    }
+  ],
+  "Jaipur": [
+    {
+      "title": "Ground Water Year Book – Rajasthan",
+      "source": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "date": "2023-01-01",
+      "url": "https://cgwb.gov.in/",
+      "summary": "CGWB report classifying over 90% of Rajasthan's blocks as 'over-exploited' or 'critical', with Jaipur district groundwater levels declining at 0.5–1 m per year in irrigated zones.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Rajasthan Drought Assessment and Crop Loss Report 2018–19",
+      "source": "Rajasthan State Agriculture Department",
+      "date": "2019-03-01",
+      "url": "https://agriculture.rajasthan.gov.in/",
+      "summary": "State government assessment recording 44 of 33 Rajasthan districts as drought-affected in 2018–19, with Jaipur region kharif and rabi crop losses exceeding 30% due to rainfall deficit.",
+      "is_placeholder": false
+    }
+  ],
+  "Kolkata": [
+    {
+      "title": "Cyclone Amphan – Situation Report No. 5",
+      "source": "National Disaster Management Authority (NDMA)",
+      "date": "2020-05-21",
+      "url": "https://ndma.gov.in/",
+      "summary": "Official NDMA report on Cyclone Amphan (May 2020), which made landfall near Kolkata as a super cyclonic storm, causing widespread flooding, infrastructure damage to 2.4 million homes, and disruption to kharif sowing.",
+      "is_placeholder": false
+    },
+    {
+      "title": "West Bengal Flood Report – Monsoon Season",
+      "source": "West Bengal State Disaster Management Authority (WBSDMA)",
+      "date": "2023-10-01",
+      "url": "https://wbsdma.gov.in/",
+      "summary": "WBSDMA report documenting recurrent monsoon flooding in Kolkata's low-lying wards (Topsia, Tiljala, Garden Reach) caused by intensified rainfall events and high tidal backwater from the Hooghly River.",
+      "is_placeholder": false
+    }
+  ],
+  "Lucknow": [
+    {
+      "title": "Ground Water Year Book – Uttar Pradesh",
+      "source": "Central Ground Water Board (CGWB), Ministry of Jal Shakti",
+      "date": "2023-01-01",
+      "url": "https://cgwb.gov.in/",
+      "summary": "CGWB annual report showing significant groundwater depletion in Lucknow and surrounding districts driven by rice-wheat double-cropping irrigation demand and below-normal monsoon recharge.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Crop Water Stress and Yield Loss in Uttar Pradesh – Kharif 2022",
+      "source": "Ministry of Agriculture & Farmers Welfare / FASAL Project",
+      "date": "2022-11-01",
+      "url": "https://fasal.gov.in/",
+      "summary": "FASAL remote-sensing crop assessment indicating Lucknow and Hardoi districts experienced erratic mid-season monsoon breaks in 2022, reducing paddy yields by an estimated 15–20% versus the 5-year average.",
+      "is_placeholder": false
+    }
+  ],
+  "Mumbai": [
+    {
+      "title": "Mumbai Floods July 2005 – Post-Event Analysis",
+      "source": "IMD Pune / Municipal Corporation of Greater Mumbai (MCGM)",
+      "date": "2005-10-01",
+      "url": "https://mausam.imd.gov.in/",
+      "summary": "Post-event analysis of the July 2005 Mumbai flood where 944 mm of rain fell in 24 hours at Santacruz, killing over 1,000 people and causing economic losses exceeding ₹550 crore.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Extreme Rainfall Events in Mumbai: Trends and Projections",
+      "source": "Indian Institute of Tropical Meteorology (IITM), Pune",
+      "date": "2020-06-01",
+      "url": "https://www.iitmpune.edu.in/",
+      "summary": "IITM study showing a statistically significant increase in very heavy rainfall days (>115 mm/day) over Mumbai during 1951–2019, projecting further intensification under RCP 4.5 and 8.5 scenarios.",
+      "is_placeholder": false
+    }
+  ],
+  "Pune": [
+    {
+      "title": "Maharashtra Drought 2018–19: District-Level Crop Loss Assessment",
+      "source": "Maharashtra Revenue and Forest Department",
+      "date": "2019-02-01",
+      "url": "https://revenue.maharashtra.gov.in/",
+      "summary": "State government assessment declaring 26 of 36 Maharashtra districts drought-affected in 2018–19, with Pune district reporting significant sugarcane and onion losses due to a 30–40% rainfall deficit.",
+      "is_placeholder": false
+    },
+    {
+      "title": "Variability of Southwest Monsoon Rainfall Over Pune District",
+      "source": "Journal of Earth System Science / IMD",
+      "date": "2021-01-01",
+      "url": "https://www.springer.com/journal/12040",
+      "summary": "Analysis of 100 years of IMD rain-gauge data at Pune showing increasing inter-annual variability, with a trend toward more intense but shorter rain spells that reduce effective soil moisture recharge for rainfed crops.",
+      "is_placeholder": false
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+"""VegShift hybrid scaffold pipeline."""
