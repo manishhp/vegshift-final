@@ -32,7 +32,7 @@ User Question
 
 Your API key is stored in `.env` file:
 ```
-GEMINI_API_KEY=AIzaSyAt0GvcTdx4VojifD2C3jWqiS4lsGGkz3E
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
 ```
 
 The chatbot loads it automatically when the backend starts.
