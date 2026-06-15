@@ -116,7 +116,16 @@ def build_payload(paths: PayloadPaths, strict: bool = False) -> Dict[str, Any]:
         risk_level = _compute_risk_level(float(eri["eri"]), bool(eri["alert"]), trend["trend"], recent_count)
 
         top_crops = [
-            {"crop": c["crop"], "score": c["score"], "season": c["season"], "zone_match": c["zone_match"]}
+            {
+                "crop": c["crop"],
+                "score": c["score"],
+                "season": c["season"],
+                "zone_match": c["zone_match"],
+                "dssat_yield_t_ha": c.get("dssat_yield_t_ha"),
+                "dssat_water_stress": c.get("dssat_water_stress"),
+                "dssat_temp_stress": c.get("dssat_temp_stress"),
+                "dssat_yield_deduction": c.get("dssat_yield_deduction"),
+            }
             for c in adv.get("ranked_crops", [])[:3]
         ]
 

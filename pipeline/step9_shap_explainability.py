@@ -5,11 +5,28 @@ from __future__ import annotations
 import argparse
 import json
 import pathlib
-
+import builtins
 import joblib
 import numpy as np
 import pandas as pd
 import shap
+
+# Patch shap's XGBTreeModelLoader to handle XGBoost 2.0+ bracketed base_score '[5E-1]' format
+if hasattr(shap, "explainers") and hasattr(shap.explainers, "_tree") and hasattr(shap.explainers._tree, "XGBTreeModelLoader"):
+    _orig_xgb_init = shap.explainers._tree.XGBTreeModelLoader.__init__
+    def _patched_xgb_init(self, xgb_model, *args, **kwargs):
+        _orig_float = builtins.float
+        class _temp_float(float):
+            def __new__(cls, val=0.0):
+                if isinstance(val, str) and val.startswith('[') and val.endswith(']'):
+                    val = val[1:-1]
+                return _orig_float.__new__(cls, val)
+        builtins.float = _temp_float
+        try:
+            _orig_xgb_init(self, xgb_model, *args, **kwargs)
+        finally:
+            builtins.float = _orig_float
+    shap.explainers._tree.XGBTreeModelLoader.__init__ = _patched_xgb_init
 
 try:
     from pipeline.research_shared import FEATURES

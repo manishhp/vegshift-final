@@ -1,5 +1,9 @@
 # pipeline/step15_crop_advisory.py
-import json, pandas as pd, numpy as np
+import json
+import os
+from pathlib import Path
+import pandas as pd
+import numpy as np
 
 # 14 Indian crops with zone compatibility, resource requirements, and season
 INDIAN_CROPS = {
@@ -19,12 +23,22 @@ INDIAN_CROPS = {
     'barley':    {'zones':['BSh','BSk','Cwa'],             'min_temp':3,  'max_temp':30, 'water_req':300,  'gdd_min':900,  'season':'rabi'},
 }
 
+# Ideal/baseline crop yields in tons per hectare
+BASELINE_YIELDS = {
+    'wheat': 4.0, 'mustard': 2.0, 'rice': 4.5, 'cotton': 2.5,
+    'sugarcane': 80.0, 'groundnut': 2.5, 'sorghum': 2.0, 'ragi': 2.5,
+    'chickpea': 1.8, 'lentil': 1.5, 'maize': 5.0, 'sunflower': 2.0,
+    'bajra': 1.8, 'barley': 3.0
+}
+
 df     = pd.read_csv('data/processed/vegshift_master.csv')
 trend  = pd.read_json('data/output/viability_trend_report.json')
 
 trend_slope = dict(zip(trend['city'], trend['slope']))
 
 advisory = {}
+dssat_runs_dir = Path("data/output/dssat_runs")
+
 for city, cdf in df.groupby('city'):
     cdf    = cdf.sort_values('year')
     latest = cdf.iloc[-1]
@@ -62,17 +76,43 @@ for city, cdf in df.groupby('city'):
         gw_pen = min(15, gw_dep * 0.3 + max(0, depl) * 2)
         score -= gw_pen
 
-        # Trajectory penalty — penalise crops whose future climate fit is deteriorating (15 pts)
+        # Trajectory penalty (15 pts)
         rain_pen_traj = max(0, -rain_trend * 0.01 * (spec['water_req'] / 500))
         temp_pen_traj = max(0, temp_trend * 2) if t_max > spec['max_temp'] - 3 else 0
         gw_pen_traj   = max(0, gw_trend * 1.5)
         traj_pen = min(15, rain_pen_traj + temp_pen_traj + gw_pen_traj)
         score -= traj_pen
 
+        # DSSAT crop simulation yield feedback (integrate pyDSSAT output)
+        yield_file = dssat_runs_dir / f"{city.lower()}_{crop}_yield.json"
+        dssat_yield = None
+        dssat_water_stress = None
+        dssat_temp_stress = None
+        dssat_pen = 0.0
+
+        if yield_file.exists():
+            try:
+                yield_data = json.loads(yield_file.read_text(encoding="utf-8"))
+                dssat_yield = float(yield_data["simulated_yield_t_ha"])
+                dssat_water_stress = float(yield_data["mean_water_stress"])
+                dssat_temp_stress = float(yield_data["mean_temp_stress"])
+
+                # Deduct score if yield drops below baseline potential
+                base_yield = BASELINE_YIELDS.get(crop, 3.0)
+                yield_ratio = min(1.0, dssat_yield / base_yield)
+                dssat_pen = max(0.0, (1.0 - yield_ratio) * 20.0)
+                score -= dssat_pen
+            except Exception as e:
+                print(f"Error reading DSSAT output for {city}/{crop}: {e}")
+
         score = max(0.0, round(score, 2))
         ranked.append({
             'crop': crop, 'season': spec['season'],
             'score': score, 'zone_match': zone in spec['zones'],
+            'dssat_yield_t_ha': dssat_yield,
+            'dssat_water_stress': dssat_water_stress,
+            'dssat_temp_stress': dssat_temp_stress,
+            'dssat_yield_deduction': round(-dssat_pen, 2) if dssat_pen > 0 else 0.0,
             'breakdown': {
                 'zone':       round(-zone_pen, 2),
                 'temp':       round(-temp_pen, 2),
@@ -102,7 +142,9 @@ for city, cdf in df.groupby('city'):
         'ranked_crops':   ranked,
     }
 
-json.dump(advisory, open('data/output/crop_advisory.json', 'w'), indent=2)
+out_path = Path('data/output/crop_advisory.json')
+out_path.parent.mkdir(parents=True, exist_ok=True)
+json.dump(advisory, open(out_path, 'w'), indent=2)
 print(f"Crop advisory generated for {len(advisory)} cities")
 for city, adv in advisory.items():
     top3 = [f"{c['crop']}({c['score']})" for c in adv['ranked_crops'][:3]]

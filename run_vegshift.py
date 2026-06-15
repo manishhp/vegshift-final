@@ -55,7 +55,7 @@ def main(dry_run: bool = False) -> None:
     print("-" * 60)
     if dry_run:
         print(f"  [dry-run] would launch in background: python {script}")
-        print("\n[dry-run complete] All 17 steps listed. No scripts executed.")
+        print(f"\n[dry-run complete] All {len(STEPS) + 1} steps listed. No scripts executed.")
     else:
         subprocess.Popen([sys.executable, script])
         print("\nVegShift complete. Dashboard launching at http://localhost:8050")
