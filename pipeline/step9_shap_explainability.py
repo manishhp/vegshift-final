@@ -125,6 +125,13 @@ def main() -> None:
             json.dump(combined[model_name], fh, indent=2)
         print(f"    Saved: {per_model_path}")
 
+    # Save primary SHAP (Random Forest) for dashboard and test payload compat
+    if "random_forest" in combined:
+        primary_path = out_dir / "shap_explanation.json"
+        with open(primary_path, "w", encoding="utf-8") as fh:
+            json.dump(combined["random_forest"], fh, indent=2)
+        print(f"    Saved primary SHAP (Random Forest) to: {primary_path}")
+
     # Cross-model global importance comparison
     cross_model: dict[str, dict[str, float]] = {}
     for model_name, summary in combined.items():

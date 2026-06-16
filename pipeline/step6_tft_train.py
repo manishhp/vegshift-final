@@ -13,6 +13,9 @@ from __future__ import annotations
 import argparse
 import pathlib
 
+import matplotlib
+matplotlib.use('Agg')
+
 from lightning.pytorch import Trainer, seed_everything
 from lightning.pytorch.callbacks import EarlyStopping, ModelCheckpoint
 from pytorch_forecasting import TemporalFusionTransformer
